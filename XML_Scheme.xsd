@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+         <!-- XML Schema Generated from XML Document on Thu Oct 08 2015 22:31:11 GMT+0300 (IDT) -->
+         <!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
+         <xs:element name="RADScheduling">
+               <xs:complexType>
+                     <xs:sequence>
+                           <xs:element name="OperatingSystem">
+                                 <xs:complexType>
+                                       <xs:sequence>
+                                             <xs:element name="OS">
+                                                   <xs:complexType>
+                                                         <xs:sequence>
+                                                               <xs:element name="ProcessesAllocation">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="ProcessInfo" maxOccurs="unbounded">
+                                                                                       <xs:complexType>
+                                                                                             <xs:sequence>
+                                                                                                   <xs:element name="ThreadInfo" minOccurs="0" maxOccurs="unbounded">
+                                                                                                         <xs:complexType>
+                                                                                                               <xs:attribute name="ThreadName" type="xs:string"></xs:attribute>
+                                                                                                               <xs:attribute name="Policy" type="xs:int"></xs:attribute>
+                                                                                                               <xs:attribute name="Priority" type="xs:int"></xs:attribute>
+                                                                                                               <xs:attribute name="CpusList" type="xs:string"></xs:attribute>
+                                                                                                         </xs:complexType>
+                                                                                                   </xs:element>
+                                                                                             </xs:sequence>
+                                                                                             <xs:attribute name="ProcessName" type="xs:string"></xs:attribute>
+                                                                                             <xs:attribute name="Policy" type="xs:int"></xs:attribute>
+                                                                                             <xs:attribute name="Priority" type="xs:int"></xs:attribute>
+                                                                                             <xs:attribute name="CpusList" type="xs:string"></xs:attribute>
+                                                                                             <xs:attribute name="isNative" type="xs:string"></xs:attribute>
+                                                                                       </xs:complexType>
+                                                                                 </xs:element>
+                                                                           </xs:sequence>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                         </xs:sequence>
+                                                         <xs:attribute name="OSName" type="xs:string"></xs:attribute>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                       </xs:sequence>
+                                 </xs:complexType>
+                           </xs:element>
+                           <xs:element name="AreaAllocation">
+                                 <xs:complexType>
+                                       <xs:sequence>
+                                             <xs:element name="AreaInfo" maxOccurs="unbounded">
+                                                   <xs:complexType>
+                                                         <xs:attribute name="AreaName" type="xs:string"></xs:attribute>
+                                                         <xs:attribute name="CpusList" type="xs:string"></xs:attribute>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                       </xs:sequence>
+                                       <xs:attribute name="TotalNumberOfCpus" type="xs:int"></xs:attribute>
+                                       <xs:attribute name="NumberOfCPUsAllocated" type="xs:int"></xs:attribute>
+                                 </xs:complexType>
+                           </xs:element>
+                     </xs:sequence>
+                     <xs:attribute name="Periodic" type="xs:string"></xs:attribute>
+                     <xs:attribute name="PeriodicTimeToWakeUp" type="xs:int"></xs:attribute>
+               </xs:complexType>
+         </xs:element>
+   </xs:schema>

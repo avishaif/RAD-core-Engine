@@ -1,0 +1,24 @@
+<RADScheduling Periodic="false" PeriodicTimeToWakeUp="30000">
+	<OperatingSystem>
+		<OS OSName="Windows">
+			<ProcessesAllocation>
+				<ProcessInfo ProcessName="lest.exe" Policy="1" Priority="20" CpusList="1" isNative="true"/>
+				<ProcessInfo ProcessName="Analyzer" Policy="2" Priority="-7" CpusList="5" isNative="true">
+					<ThreadInfo ThreadName="Sender" Policy="1" Priority="65" CpusList="7"/>
+					<ThreadInfo ThreadName="Receiver" Policy="1" Priority="65" CpusList="4"/>
+				</ProcessInfo>
+				<ProcessInfo ProcessName="eclipse.exe" Policy="0" Priority="120" CpusList="0,1" isNative="false">
+					<ThreadInfo ThreadName="main" Policy="1" Priority="10" CpusList="0,1"/>
+				</ProcessInfo>
+				<ProcessInfo ProcessName="java.exe" Policy="0" Priority="150" CpusList="0" isNative="false">
+					<ThreadInfo ThreadName="RAD-Core Thread A" Policy="1" Priority="165" CpusList="0"/>
+				</ProcessInfo>
+			</ProcessesAllocation>
+		</OS>		
+	</OperatingSystem>
+	<AreaAllocation TotalNumberOfCpus="10" NumberOfCPUsAllocated="8">
+		<AreaInfo AreaName="Area1" CpusList="0,1,2,3"/>
+		<AreaInfo AreaName="Area2" CpusList="4,5,6"/>
+		<AreaInfo AreaName="Area3" CpusList="7"/>
+	</AreaAllocation>
+</RADScheduling>
